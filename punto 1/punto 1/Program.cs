@@ -5,23 +5,23 @@ class Program
     static void Main()
     {
         Console.Write("Ingresa tu año de nacimiento: ");
-        int birthYear = int.Parse(Console.ReadLine());
+        int AñoNacimiento = int.Parse(Console.ReadLine());
 
-        int age = CalculateAge(birthYear);
-        Console.WriteLine($"Tu edad es: {age} años");
+        int edad = CalculateAge(AñoNacimiento);
+        Console.WriteLine($"Tu edad es: {edad} años");
     }
 
-    static int CalculateAge(int birthYear)
+    static int CalculateAge(int AñoNacimiento)
     {
-        int currentYear = DateTime.Now.Year;
-        int age = currentYear - birthYear;
+        int AñoActual = DateTime.Now.Year;
+        int edad = AñoActual - AñoNacimiento;
 
-        if (DateTime.Now < new DateTime(currentYear, birthYear, 1))
+        if (DateTime.Now < new DateTime(AñoActual, AñoNacimiento, 1))
         {
-            age--;
+            edad--;
         }
 
-        return age;
+        return edad;
     }
 }
 
